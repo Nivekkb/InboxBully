@@ -1,36 +1,71 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# InboxBully 🛡️
 
-## Getting Started
+**Protect your nervous system. Reclaim your inbox.**
 
-First, run the development server:
+InboxBully is a human-first safety layer for your email, designed to neutralize predatory marketing, filter emotional triggers, and provide a calm, controlled workspace. Originally built as a gift for the BillBully community, it represents a foundational shift toward technology that respects human autonomy and emotional well-being.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 🌟 Core Philosophy
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+We believe your inbox should be a tool for your life, not a weapon used against your nervous system. InboxBully is built on three pillars:
+1. **Calm Power**: Technology should reduce stress, not create it.
+2. **Protector Energy**: We actively defend you against manipulative marketing and predatory financial tactics.
+3. **Human-First**: You are always in control. We provide the guardrails; you make the decisions.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## ✨ Key Features
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **Smart Unsubscribe Defense**: Automatically identifies and neutralizes predatory subscriptions and manipulative marketing funnels.
+- **Emotional Safety Filters**: Routes stress-inducing emails (debt threats, guilt-based marketing) to a "Handle When Ready" space.
+- **AI-Assist Magic Layer**: An intuitive interface where you can simply say what you want (e.g., "Clean this inbox like a calm friend would") and InboxBully executes safely.
+- **Human-First Guardrails**: We NEVER delete financial, government, legal, or identity emails without explicit confirmation.
+- **Instant Undo**: Every action is reversible. Every decision is logged in plain English.
 
-## Learn More
+## 🔒 Trust & Privacy
 
-To learn more about Next.js, take a look at the following resources:
+Your trust is our most sacred asset.
+- **Data Sovereignty**: We don't sell, rent, share, or trade your data. Period.
+- **Dignity**: Your financial situation is personal. We treat it with the dignity it deserves.
+- **Transparency**: No hidden algorithms. You see exactly why an email was flagged or filtered.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🚀 Getting Started
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Prerequisites
+- [Bun](https://bun.sh) installed on your machine.
+- A modern web browser.
 
-## Deploy on Vercel
+### Installation
+1. Clone the repository:
+   \`\`\`bash
+   git clone https://github.com/Nivekkb/InboxBully.git
+   cd InboxBully
+   \`\`\`
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+2. Install dependencies:
+   \`\`\`bash
+   bun install
+   \`\`\`
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+3. Run the development server:
+   \`\`\`bash
+   bun run dev
+   \`\`\`
+
+4. Open [http://localhost:3000](http://localhost:3000) in your browser.
+
+## 🛠️ Tech Stack
+
+- **Framework**: Next.js 15 (App Router)
+- **Styling**: Tailwind CSS v4 (Dark Mode, Glassmorphism)
+- **Animations**: Framer Motion
+- **Icons**: Lucide React
+- **Components**: Radix UI / Shadcn
+
+## 🗺️ Roadmap
+
+- [ ] Integration with major email providers (Gmail, Outlook, iCloud).
+- [ ] Advanced "Protector Mode" for vulnerable users.
+- [ ] Community-driven predatory sender database.
+- [ ] Mobile application for on-the-go protection.
+
+---
+
+Built with care for the BillBully community. 💚
