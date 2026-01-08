@@ -7,6 +7,7 @@ InboxBully is a human-first safety layer for your email, designed to neutralize 
 ## 🌟 Core Philosophy
 
 We believe your inbox should be a tool for your life, not a weapon used against your nervous system. InboxBully is built on three pillars:
+
 1. **Calm Power**: Technology should reduce stress, not create it.
 2. **Protector Energy**: We actively defend you against manipulative marketing and predatory financial tactics.
 3. **Human-First**: You are always in control. We provide the guardrails; you make the decisions.
