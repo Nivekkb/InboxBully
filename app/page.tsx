@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -39,7 +40,7 @@ const features = [
     id: "unsubscribe",
     title: "Smart Unsubscribe Defense",
     icon: ShieldCheck,
-    summary: "Stop the bleed. Automatically identify and neutralize predatory marketing funnels.",
+    summary: "Neutralize predatory funnels before they bleed you dry. InboxBully identifies and shuts down aggressive marketing loops automatically.",
     details: {
       identifies: [
         "Predatory subscriptions",
@@ -59,7 +60,7 @@ const features = [
     id: "filters",
     title: "Emotional Safety Filters",
     icon: Filter,
-    summary: "Your inbox shouldn't be an ambush. Route stress-inducing emails to a safe space.",
+    summary: "Your inbox shouldn’t ambush you. Stress-inducing emails get routed to a safe space until you’re ready.",
     details: {
       folders: ["Essential Accounts", "Renewal Alerts", "Handle When Ready", "Noise Filter"],
       detects: ["Debt threats", "Guilt-based marketing", "Aggressive collections", "High-pressure spam"],
@@ -70,7 +71,7 @@ const features = [
     id: "cleanup",
     title: "Confident Bulk Cleanup",
     icon: Trash2,
-    summary: "Clear the clutter without the fear. AI-guided deletion with clear reasoning.",
+    summary: "Reduce the clutter without fear. InboxBully explains every deletion in plain language so you always understand why.",
     details: {
       process: [
         "Deep history analysis",
@@ -85,7 +86,7 @@ const features = [
     id: "prompt",
     title: "Human-Language Control",
     icon: MessageSquare,
-    summary: "Just say what you need. Our AI assistant organizes your life like a trusted friend.",
+    summary: "Say what you want in normal words. InboxBully organizes your inbox like a trusted friend would.",
     details: {
       examples: [
         "\"Remove everything that stresses me out except my bills.\"",
@@ -100,7 +101,7 @@ const features = [
     id: "awareness",
     title: "Emotional Awareness",
     icon: AlertTriangle,
-    summary: "Gentle, thoughtful warnings for hard-hitting content. You stay in control.",
+    summary: "Gentle, thoughtful warnings for hard-hitting financial content. You stay in control, not your anxiety.",
     details: {
       warnings: [
         "\"This email mentions debt — view now or save for later?\"",
@@ -114,7 +115,7 @@ const features = [
     id: "guardrails",
     title: "Human-First Guardrails",
     icon: Heart,
-    summary: "Absolute safety. We never touch your most critical documents without you.",
+    summary: "Absolute safety. InboxBully never touches your most critical documents without you.",
     details: {
       neverDeletes: ["Identity documents", "Financial access", "Government notices", "Legal records"],
       features: ["Instant Undo", "Full transparency", "Human-readable logs"],
@@ -148,8 +149,12 @@ export default function LandingPage() {
             <a href="#demo" className="hover:text-primary transition-colors">Demo</a>
           </div>
           <div className="flex items-center gap-3">
-            <Button variant="ghost" size="sm" className="hidden sm:flex hover:bg-primary/10 hover:text-primary">Login</Button>
-            <Button size="sm" variant="glow" className="rounded-full px-6">Sign Up</Button>
+            <Button asChild variant="ghost" size="sm" className="hidden sm:flex hover:bg-primary/10 hover:text-primary">
+              <Link href="/login">Login</Link>
+            </Button>
+            <Button asChild size="sm" variant="glow" className="rounded-full px-6">
+              <Link href="/signup">Sign Up</Link>
+            </Button>
           </div>
         </div>
       </nav>
@@ -170,20 +175,27 @@ export default function LandingPage() {
               Protect your <br />
               <span className="gradient-text">nervous system.</span>
             </h1>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto mb-10 leading-relaxed">
-              InboxBully is a human-first safety layer for your email. Neutralize predatory marketing, filter emotional triggers, and reclaim your peace of mind.
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto mb-6 leading-relaxed">
+              Email shouldn’t put you into fight-or-flight. InboxBully shields you from financial stress emails so you can breathe, think, and stay in control.
             </p>
             
             {/* Signup/Login Path */}
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
-              <Button size="lg" variant="glow" className="rounded-full px-10 h-14 font-bold text-lg group">
-                <UserPlus className="mr-2 w-5 h-5 group-hover:scale-110 transition-transform" />
-                Create Free Account
+              <Button asChild size="lg" variant="glow" className="rounded-full px-10 h-14 font-bold text-lg group">
+                <Link href="/signup">
+                  <UserPlus className="mr-2 w-5 h-5 group-hover:scale-110 transition-transform" />
+                  Create Free Account
+                </Link>
               </Button>
-              <Button size="lg" variant="outline" className="rounded-full px-10 h-14 font-bold text-lg glass-card border-primary/20 hover:border-primary/50 group transition-all text-foreground">
-                <LogIn className="mr-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                Login
+              <Button asChild size="lg" variant="outline" className="rounded-full px-10 h-14 font-medium text-base glass-card border-primary/20 hover:border-primary/50 group transition-all text-foreground/80">
+                <Link href="/login">
+                  <LogIn className="mr-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                  Login
+                </Link>
               </Button>
+            </div>
+            <div className="text-sm text-muted-foreground/80 mb-10">
+              No inbox access is ever taken without your permission. You stay in control at every step.
             </div>
 
             {/* Trusted By Section */}
@@ -210,7 +222,7 @@ export default function LandingPage() {
                 </div>
                 <h3 className="text-xl font-bold">Absolute Privacy</h3>
                 <p className="text-muted-foreground leading-relaxed">
-                  We don't sell, rent, share, or trade your data. Your financial situation is personal, and we treat it with the dignity it deserves.
+                  We don’t sell, rent, share, or trade your data—ever. Your financial life is personal, and we treat it with the dignity it deserves.
                 </p>
               </div>
               <div className="space-y-4 text-center md:text-left">
@@ -219,7 +231,7 @@ export default function LandingPage() {
                 </div>
                 <h3 className="text-xl font-bold">Safety Guardrails</h3>
                 <p className="text-muted-foreground leading-relaxed">
-                  We NEVER delete financial, government, legal, or identity emails without explicit confirmation. We only touch what you approve.
+                  InboxBully never deletes financial, government, legal, or identity documents without explicit confirmation. We only touch what you approve.
                 </p>
               </div>
               <div className="space-y-4 text-center md:text-left">
@@ -234,7 +246,7 @@ export default function LandingPage() {
             </div>
             <div className="mt-16 p-6 rounded-2xl glass-card border-primary/10 text-center">
               <p className="text-primary font-medium italic">
-                "Your inbox should be a tool for your life, not a weapon used against your nervous system."
+                "Your inbox should be a tool for your life—not a weapon against your nervous system."
               </p>
             </div>
           </div>
@@ -246,7 +258,7 @@ export default function LandingPage() {
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl lg:text-5xl font-bold mb-4 tracking-tight">See the Relief</h2>
-            <p className="text-muted-foreground text-lg">Experience the calm of an InboxBully protected workspace.</p>
+            <p className="text-muted-foreground text-lg">Experience the calm of an InboxBully-protected workspace.</p>
           </div>
 
           <div className="max-w-4xl mx-auto glass-card p-2 lg:p-4 shadow-glow">
@@ -339,10 +351,10 @@ export default function LandingPage() {
       {/* Core Features Grid */}
       <section id="features" className="py-24 bg-background/50">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-20">
-            <h2 className="text-4xl lg:text-6xl font-bold mb-4 tracking-tight">Built for Humans</h2>
-            <p className="text-muted-foreground text-lg">Thoughtful technology designed for your peace of mind.</p>
-          </div>
+        <div className="text-center mb-20">
+          <h2 className="text-4xl lg:text-6xl font-bold mb-4 tracking-tight">Built for Humans</h2>
+          <p className="text-muted-foreground text-lg">Thoughtful technology designed for your peace of mind.</p>
+        </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {features.map((feature) => (
@@ -459,19 +471,19 @@ export default function LandingPage() {
               {
                 name: "Sarah J.",
                 role: "BillBully Member",
-                content: "I used to wake up to 'Final Warning' emails that ruined my entire day. InboxBully caught them before I even saw them. Life-changing.",
+                content: "I used to wake up to 'Final Warning' emails that ruined my day before I even stood up. InboxBully caught them before I saw them. Honest relief.",
                 stars: 5
               },
               {
                 name: "Michael R.",
                 role: "Early Adopter",
-                content: "The 'What Do You Want?' mode is pure magic. I told it to clean my inbox like a calm friend would, and it did exactly that.",
+                content: "I didn’t realize how much my inbox was stressing me out until it stopped. The 'Handle When Ready' folder is my safe space.",
                 stars: 5
               },
               {
                 name: "Elena K.",
                 role: "Stability Seeker",
-                content: "Finally, a tool that understands that financial stress is emotional stress. The 'Handle When Ready' folder is my safe space.",
+                content: "This is the first tool that understands financial stress isn’t just numbers—it’s emotional pressure. It helped me breathe again.",
                 stars: 5
               }
             ].map((t, i) => (
@@ -495,6 +507,119 @@ export default function LandingPage() {
         </div>
       </section>
 
+      {/* Privacy Policy Section */}
+      <section id="privacy" className="py-24 bg-background/50 border-t border-border/20">
+        <div className="container mx-auto px-4">
+          <div className="max-w-5xl mx-auto glass-card p-8 lg:p-12 border-primary/10">
+            <div className="text-center mb-10">
+              <h2 className="text-4xl lg:text-5xl font-bold mb-3 tracking-tight">Privacy Policy</h2>
+              <p className="text-muted-foreground text-lg">Your inbox is personal. We treat it that way.</p>
+            </div>
+            <div className="grid lg:grid-cols-2 gap-10 text-sm lg:text-base text-muted-foreground leading-relaxed">
+              <div className="space-y-6">
+                <div>
+                  <h3 className="text-foreground font-bold text-lg mb-2">What we collect</h3>
+                  <p>Account details (email, name) and the minimum metadata required to operate InboxBully. If you connect an email provider, we process message data only to deliver the features you request.</p>
+                </div>
+                <div>
+                  <h3 className="text-foreground font-bold text-lg mb-2">How we use it</h3>
+                  <p>To filter, organize, and protect your inbox, provide customer support, and improve product reliability. We do not sell, rent, or trade personal information.</p>
+                </div>
+                <div>
+                  <h3 className="text-foreground font-bold text-lg mb-2">Sharing</h3>
+                  <p>We share data only with trusted processors that help run the service (hosting, analytics, email delivery) under strict confidentiality obligations.</p>
+                </div>
+              </div>
+              <div className="space-y-6">
+                <div>
+                  <h3 className="text-foreground font-bold text-lg mb-2">Security</h3>
+                  <p>We use encryption in transit, access controls, and audit logs. No system is perfect, but we build for safety first.</p>
+                </div>
+                <div>
+                  <h3 className="text-foreground font-bold text-lg mb-2">Your choices</h3>
+                  <p>You can request access, correction, export, or deletion of your data at any time. Disconnect your email account to stop processing.</p>
+                </div>
+                <div>
+                  <h3 className="text-foreground font-bold text-lg mb-2">Contact</h3>
+                  <p>Email us at support@inboxbully.com for privacy requests. We respond within a reasonable timeframe.</p>
+                </div>
+              </div>
+            </div>
+            <div className="mt-10 text-xs text-muted-foreground/70 text-center">
+              Effective date: January 1, 2026. We may update this policy with notice on this page.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Terms of Service Section */}
+      <section id="terms" className="py-24 bg-background/30 border-t border-border/20">
+        <div className="container mx-auto px-4">
+          <div className="max-w-5xl mx-auto glass-card p-8 lg:p-12 border-primary/10">
+            <div className="text-center mb-10">
+              <h2 className="text-4xl lg:text-5xl font-bold mb-3 tracking-tight">Terms of Service</h2>
+              <p className="text-muted-foreground text-lg">Simple rules, clear boundaries.</p>
+            </div>
+            <div className="grid lg:grid-cols-2 gap-10 text-sm lg:text-base text-muted-foreground leading-relaxed">
+              <div className="space-y-6">
+                <div>
+                  <h3 className="text-foreground font-bold text-lg mb-2">Acceptance</h3>
+                  <p>By using InboxBully, you agree to these terms and our Privacy Policy. If you don’t agree, do not use the service.</p>
+                </div>
+                <div>
+                  <h3 className="text-foreground font-bold text-lg mb-2">Accounts</h3>
+                  <p>You’re responsible for your account activity and for keeping access credentials secure.</p>
+                </div>
+                <div>
+                  <h3 className="text-foreground font-bold text-lg mb-2">Acceptable use</h3>
+                  <p>Don’t misuse the service, attempt to break it, or use it for unlawful or abusive purposes.</p>
+                </div>
+                <div>
+                  <h3 className="text-foreground font-bold text-lg mb-2">Subscriptions</h3>
+                  <p>Paid plans, if offered, renew until canceled. Pricing and features can change with prior notice.</p>
+                </div>
+              </div>
+              <div className="space-y-6">
+                <div>
+                  <h3 className="text-foreground font-bold text-lg mb-2">Service limits</h3>
+                  <p>InboxBully depends on third-party email providers. We can’t guarantee uninterrupted access or provider availability.</p>
+                </div>
+                <div>
+                  <h3 className="text-foreground font-bold text-lg mb-2">Disclaimers</h3>
+                  <p>The service is provided “as is.” We don’t provide legal, financial, or medical advice.</p>
+                </div>
+                <div>
+                  <h3 className="text-foreground font-bold text-lg mb-2">Termination</h3>
+                  <p>You can stop using the service at any time. We may suspend accounts for violations of these terms.</p>
+                </div>
+                <div>
+                  <h3 className="text-foreground font-bold text-lg mb-2">Contact</h3>
+                  <p>Questions? Email support@inboxbully.com.</p>
+                </div>
+              </div>
+            </div>
+            <div className="mt-10 text-xs text-muted-foreground/70 text-center">
+              Effective date: January 1, 2026. We may update these terms with notice on this page.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Support Section */}
+      <section id="support" className="py-20 bg-background/50 border-t border-border/20">
+        <div className="container mx-auto px-4">
+          <div className="max-w-3xl mx-auto text-center glass-card p-8 border-primary/10">
+            <h2 className="text-3xl lg:text-4xl font-bold mb-4 tracking-tight">Support</h2>
+            <p className="text-muted-foreground text-lg mb-6">
+              Need help or have a privacy request? We’re here for you.
+            </p>
+            <Button asChild variant="outline" className="rounded-full px-8">
+              <a href="mailto:support@inboxbully.com">Email support@inboxbully.com</a>
+            </Button>
+          </div>
+        </div>
+      </section>
+
       {/* Footer */}
       <footer className="py-20 border-t border-border/20 bg-background/30">
         <div className="container mx-auto px-4 text-center">
@@ -513,9 +638,9 @@ export default function LandingPage() {
             A free gift for the BillBully community. Built with care for your peace of mind.
           </p>
           <div className="flex justify-center gap-10 text-sm font-bold uppercase tracking-widest text-muted-foreground/60 mb-12">
-            <a href="#" className="hover:text-primary transition-colors">Privacy</a>
-            <a href="#" className="hover:text-primary transition-colors">Terms</a>
-            <a href="#" className="hover:text-primary transition-colors">Support</a>
+            <a href="#privacy" className="hover:text-primary transition-colors">Privacy</a>
+            <a href="#terms" className="hover:text-primary transition-colors">Terms</a>
+            <a href="#support" className="hover:text-primary transition-colors">Support</a>
           </div>
           <div className="text-xs text-muted-foreground/40 font-medium">
             © 2026 InboxBully. All rights reserved.
